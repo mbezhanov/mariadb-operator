@@ -20,7 +20,7 @@ var _ = Describe("Backup", func() {
 		expectMariadbReady(testCtx, k8sClient, testMdbkey)
 	})
 
-	DescribeTable("Extracting the author's first and last name",
+	DescribeTable("Creating a Backup",
 		func(
 			resourceName string,
 			builderFn func(types.NamespacedName) *mariadbv1alpha1.Backup,
