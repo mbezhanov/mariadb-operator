@@ -229,6 +229,17 @@ func testBackupCronJob(backup *mariadbv1alpha1.Backup) {
 			return false
 		}
 		isScheduleCorrect := cronJob.Spec.Schedule == backup.Spec.Schedule.Cron
+
+		if backup.Spec.SuccessfulJobsHistoryLimit == nil {
+			// Kubernetes sets a default of 3 when no limit is specified.
+			backup.Spec.SuccessfulJobsHistoryLimit = ptr.To[int32](3)
+		}
+
+		if backup.Spec.FailedJobsHistoryLimit == nil {
+			// Kubernetes sets a default of 1 when no limit is specified.
+			backup.Spec.FailedJobsHistoryLimit = ptr.To[int32](1)
+		}
+
 		isSuccessfulJobHistoryLimitCorrect :=
 			reflect.DeepEqual(cronJob.Spec.SuccessfulJobsHistoryLimit, backup.Spec.SuccessfulJobsHistoryLimit)
 		isFailedJobHistoryLimitCorrect :=
@@ -257,13 +268,6 @@ func testS3Backup(backup *mariadbv1alpha1.Backup) {
 			return backup.IsComplete()
 		}, testTimeout, testInterval).Should(BeTrue())
 	}
-}
-
-func getBackupWithScheduleAndHistoryLimits(backup *mariadbv1alpha1.Backup) *mariadbv1alpha1.Backup {
-	backup.Spec.Schedule = &mariadbv1alpha1.Schedule{Cron: "*/5 * * * *"}
-	backup.Spec.SuccessfulJobsHistoryLimit = ptr.To[int32](5)
-	backup.Spec.FailedJobsHistoryLimit = ptr.To[int32](5)
-	return backup
 }
 
 func decorateBackupWithSchedule(backup *mariadbv1alpha1.Backup) *mariadbv1alpha1.Backup {
