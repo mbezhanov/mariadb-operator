@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../METRICS/">
+        <link rel="prev" href="../STORAGE/">
       
       
-        <link rel="next" href="../SQL_RESOURCES/">
+        <link rel="next" href="../UPDATES/">
       
       
       <link rel="icon" href="../assets/mariadb_favicon.svg">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Registry - MariaDB Operator</title>
+        <title>Suspend - MariaDB Operator</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#registry" class="md-skip">
+        <a href="#suspend" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Registry
+              Suspend
             
           </span>
         </div>
@@ -506,30 +506,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Registry
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../REGISTRY/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,71 +518,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentials
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mariadb" class="md-nav__link">
-    <span class="md-ellipsis">
-      MariaDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maxscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      MaxScale
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-restore-and-sqljob" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup, Restore and SqlJob
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -651,10 +566,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../SUSPEND/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Suspend
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -663,6 +598,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suspended-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suspended state
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suspend-a-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suspend a resource
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -975,36 +957,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
+  <a href="#suspended-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Credentials
+      Suspended state
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mariadb" class="md-nav__link">
+  <a href="#suspend-a-resource" class="md-nav__link">
     <span class="md-ellipsis">
-      MariaDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maxscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      MaxScale
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-restore-and-sqljob" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup, Restore and SqlJob
+      Suspend a resource
     </span>
   </a>
   
@@ -1028,96 +992,41 @@
   
 
 
-<h1 id="registry">Registry</h1>
+<h1 id="suspend">Suspend</h1>
 <blockquote>
 <p>[!NOTE]<br />
-This documentation applies to <code>mariadb-operator</code> version &gt;= v0.0.27</p>
+This documentation applies to <code>mariadb-operator</code> version &gt;= v0.0.30</p>
 </blockquote>
-<p>This documentation aims to provide guidance on how to configure private registries in the <code>mariadb-operator</code> CRs.</p>
 <h2 id="table-of-contents">Table of contents</h2>
 <!-- toc -->
 <ul>
-<li><a href="#credentials">Credentials</a></li>
-<li><a href="#mariadb"><code>MariaDB</code></a></li>
-<li><a href="#maxscale"><code>MaxScale</code></a></li>
-<li><a href="#backup-restore-and-sqljob"><code>Backup</code>, <code>Restore</code> and <code>SqlJob</code></a></li>
+<li><a href="#suspended-state">Suspended state</a></li>
+<li><a href="#suspend-a-resource">Suspend a resource</a></li>
 </ul>
 <!-- /toc -->
 
-<h2 id="credentials">Credentials</h2>
-<p>The first requirement to access a private registry is having credentials in the cluster that will be pulling the images. Kubernetes has a specific type of <code>Secret</code> <code>kubernetes.io/dockerconfigjson</code> designed specifically for this purpose. Please, refer to the <a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">Kubernetes documentation</a> to see how it can be configured.</p>
-<p>For convenience, this repo provides a make target that can be used to configure your existing credentials available in <code>~/.docker/config</code> as a <code>kubernetes.io/dockerconfigjson</code> <code>Secret</code>:</p>
-<pre><code class="language-bash">REGISTRY_PULL_SECRET=registry DOCKER_CONFIG=~/.docker/config.json make registry-secret
-</code></pre>
-<h2 id="mariadb"><code>MariaDB</code></h2>
-<p>In order to configure a private registry in your <code>MariaDB</code> resource, you can specify multiple <code>imagePullSecrets</code>:</p>
+<h2 id="suspended-state">Suspended state</h2>
+<p>When a resource is suspended, all operations performed by the operator are disabled, including but not limited to:
+- Provisioning
+- Upgrades
+- Volume resize
+- Galera cluster recovery</p>
+<p>More specifically, the reconciliation loop of the operator is omitted, anything part of it will not happen while the resource is suspended. This could be useful in <strong>maintenance</strong> scenarios, where manual operations need to be performed, as it helps prevent conflicts with the operator.</p>
+<h2 id="suspend-a-resource">Suspend a resource</h2>
+<p>Currently, only <code>MariaDB</code> and <code>MaxScale</code> resources support suspension. You can enable it by setting <code>suspend=true</code>:</p>
 <pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
-  name: mariadb
+  name: mariadb-galera
 spec:
-  ...
-  image: docker.mariadb.com/enterprise-server:10.6
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-    - name: another-registry
+  suspend: true
 </code></pre>
-<p>As a result, the <code>Pods</code> created as part of the reconciliation process will have the <code>imagePullSecrets</code>.</p>
-<p>You can also configure credentials for the metrics exporter:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-  ...
-  metrics:
-    enabled: true
-    exporter:
-      image: prom/mysqld-exporter:v0.15.1
-      imagePullPolicy: IfNotPresent
-      imagePullSecrets:
-        - name: registry
+<p>This results in the reconciliation loop being disabled and the status being marked as <code>Suspended</code>:</p>
+<pre><code class="language-bash">kubectl get mariadbs
+NAME             READY   STATUS      PRIMARY           UPDATES                   AGE
+mariadb-galera   True    Suspended   mariadb-galera-0  ReplicasFirstPrimaryLast  12m
 </code></pre>
-<p>By default, the metrics exporter <code>Pod</code> will inherit the credentials specified in the <code>imagePullSecrets</code> root field, but you can also specify dedicated credentials via <code>metrics.exporter.imagePullSecrets</code>.</p>
-<h2 id="maxscale"><code>MaxScale</code></h2>
-<p>Similarly to <code>MariaDB</code>, you are able to configure private registries in your <code>MaxScale</code> resource:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MaxScale
-metadata:
-  name: maxscale
-spec:
-  ...
-  image: mariadb/maxscale:23.08
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-</code></pre>
-<h2 id="backup-restore-and-sqljob"><code>Backup</code>, <code>Restore</code> and <code>SqlJob</code></h2>
-<p>The batch <code>Job</code> resources will inherit the <code>imagePullSecrets</code> from the referred <code>MariaDB</code>, as they also make use of its <code>image</code>. However, you are also able to provide dedicated <code>imagePullSecrets</code> for these resources:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-  ...
-  image: docker.mariadb.com/enterprise-server:10.6
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-</code></pre>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: Backup
-metadata:
-  name: backup
-spec:
-  ...
-  mariaDbRef:
-    name: mariadb
-  imagePullSecrets:
-    - name: backup-registry
-</code></pre>
-<p>When the resources from the above examples are created, a <code>Job</code> with both <code>registry</code> and <code>backup-registry</code> <code>imagePullSecrets</code> will be reconciled.</p>
+<p>To re-enable it, simply remove the <code>suspend</code> setting or set it to <code>suspend=false</code>.</p>
 
 
 

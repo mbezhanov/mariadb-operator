@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../UPDATES/">
+        <link rel="prev" href="../HA/">
       
       
-        <link rel="next" href="../UPGRADE_v0.0.21/">
+        <link rel="next" href="../MAXSCALE/">
       
       
       <link rel="icon" href="../assets/mariadb_favicon.svg">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Upgrade guide v0.0.20 - MariaDB Operator</title>
+        <title>Helm - MariaDB Operator</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upgrade-guide-v0020" class="md-skip">
+        <a href="#helm" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Upgrade guide v0.0.20
+              Helm
             
           </span>
         </div>
@@ -369,6 +369,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../DOCKER/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images for MariaDB Operator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../GALERA/" class="md-nav__link">
         
   
@@ -398,6 +418,171 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Helm
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Helm
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control-plane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-crds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing CRDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster-wide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single namespace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      High availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -489,11 +674,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../SQL_RESOURCES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../STORAGE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SUSPEND/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suspend
   </span>
   
 
@@ -526,19 +751,66 @@
       
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_0.34.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade guide 0.34.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_v0.0.20/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -547,19 +819,19 @@
   
 
       </a>
-      
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../UPGRADE_v0.0.21/" class="md-nav__link">
+      <a href="../releases/UPGRADE_v0.0.21/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,15 +843,16 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../UPGRADE_v0.0.24/" class="md-nav__link">
+      <a href="../releases/UPGRADE_v0.0.24/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,15 +864,16 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../UPGRADE_v0.0.26/" class="md-nav__link">
+      <a href="../releases/UPGRADE_v0.0.26/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,15 +885,16 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../UPGRADE_v0.0.28/" class="md-nav__link">
+      <a href="../releases/UPGRADE_v0.0.28/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -628,6 +903,98 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_v0.0.30/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade guide v0.0.30
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_v0.0.31/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade guide v0.0.31
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_v0.0.32/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade guide v0.0.32
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/UPGRADE_v0.0.33/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrade guide v0.0.33
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -652,6 +1019,119 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control-plane
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-crds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing CRDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster-wide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single namespace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      High availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -668,68 +1148,126 @@
   
 
 
-<h1 id="upgrade-guide-v0020">Upgrade guide v0.0.20</h1>
+<h1 id="helm">Helm</h1>
 <blockquote>
 <p>[!NOTE]<br />
-APIs are currently in <code>v1alpha1</code>, which implies that non backward compatible changes might happen. See <a href="https://kubernetes.io/docs/reference/using-api/#api-versioning">Kubernetes API versioning</a> for more detail.</p>
+This documentation applies to <code>mariadb-operator</code> version &gt;= v0.0.32</p>
 </blockquote>
-<p>This guide illustrates, step by step, how to migrate to <code>v0.0.20</code> from previous versions, as some breaking changes have been introduced. See:
-- https://github.com/mariadb-operator/mariadb-operator/pull/197
-- https://github.com/mariadb-operator/mariadb-operator/pull/211</p>
-<p>It's important to note that this migration process only applies if:
-- You have created a <code>MariaDB</code> resource using a <code>mariadb-operator</code> version &lt; <code>v0.0.20</code> and you are upgrading to &gt;= <code>v0.0.20</code>.
-- Your <code>MariaDB</code> resource has <code>spec.replication</code> enabled.</p>
-<p>If that's your case follow these steps for upgrading:</p>
+<p>Helm is the preferred way to install <code>mariadb-operator</code> in vanilla Kubernetes clusters (i.e. not OpenShift). This doc aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<!-- toc -->
 <ul>
-<li>Uninstall you current <code>mariadb-operator</code> for preventing conflicts:</li>
+<li><a href="#charts">Charts</a></li>
+<li><a href="#control-plane">Control-plane</a></li>
+<li><a href="#installing-crds">Installing CRDs</a></li>
+<li><a href="#installing-the-operator">Installing the operator</a></li>
+<li><a href="#deployment-modes">Deployment modes</a></li>
+<li><a href="#updates">Updates</a></li>
+<li><a href="#high-availability">High availability</a></li>
+<li><a href="#uninstalling">Uninstalling</a></li>
 </ul>
+<!-- /toc -->
+
+<h2 id="charts">Charts</h2>
+<p>The installation of <code>mariadb-operator</code> is splitted into two different helm charts for better convenience:
+- <a href="../deploy/charts/mariadb-operator-crds/"><code>mariadb-operator-crds</code></a>: Bundles the <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/"><code>CustomResourceDefinitions</code></a> required by the operator.
+- <a href="../deploy/charts/mariadb-operator/"><code>mariadb-operator</code></a>: Contains all the template manifests required to install the operator.</p>
+<h2 id="control-plane">Control-plane</h2>
+<p>The <code>mariadb-operator</code> is an extension of the Kubernetes control-plane, consisting of the following components that are deployed by Helm:</p>
+<ul>
+<li><code>operator</code>: The <code>mariadb-operator</code> itself that performs the CRD reconciliation.</li>
+<li><code>webhook</code>: The Kubernetes control-plane delegates CRD validations to this HTTP server. Kubernetes requires TLS to communicate with the webhook server.</li>
+<li><code>cert-controller</code>: Provisions TLS certificates for the webhook. You can see it as a minimal <a href="https://cert-manager.io/">cert-manager</a> that is intended to work only with the webhook. It is optional and can be replaced by cert-manager.</li>
+</ul>
+<h2 id="installing-crds">Installing CRDs</h2>
+<p>Helm has certain <a href="https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations">limitations when it comes to manage CRDs</a>. To address this, we are providing the CRDs in a separate chart, <a href="https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#method-2-separate-charts">as recommended by the official Helm documentation</a>. This allows us to manage the installation and updates of the CRDs independently from the operator. For example, you can uninstall the operator without impacting your existing <code>MariaDB</code> CRDs.</p>
+<p>CRDs can be installed in your cluster by running the following commands</p>
+<pre><code class="language-bash">helm repo add mariadb-operator https://helm.mariadb.com/mariadb-operator
+helm install mariadb-operator-crds mariadb-operator/mariadb-operator-crds
+</code></pre>
+<h2 id="installing-the-operator">Installing the operator</h2>
+<p>Once the CRDs are available in the cluster, you can proceed to install the operator:</p>
+<pre><code class="language-bash">helm repo add mariadb-operator https://helm.mariadb.com/mariadb-operator
+helm install mariadb-operator mariadb-operator/mariadb-operator
+</code></pre>
+<p>If you have the <a href="https://github.com/prometheus-operator/prometheus-operator">prometheus operator</a> and <a href="https://cert-manager.io/docs/installation/">cert-manager</a> already installed in your cluster, it is recommended to leverage them to scrape the operator metrics and provision the webhook certificate respectively:</p>
+<pre><code class="language-bash">helm repo add mariadb-operator https://helm.mariadb.com/mariadb-operator
+helm install mariadb-operator mariadb-operator/mariadb-operator \
+  --set metrics.enabled=true --set webhook.cert.certManager.enabled=true
+</code></pre>
+<p>Refer to the helm chart README for detailed information about all the supported <a href="./../deploy/charts/mariadb-operator/README.md">helm values</a>.</p>
+<h2 id="deployment-modes">Deployment modes</h2>
+<p>Deployments are highly configurable via the <a href="./../deploy/charts/mariadb-operator/README.md">helm values</a>. In particular the following deployment modes are supported:</p>
+<h4 id="cluster-wide">Cluster-wide</h4>
+<p>The operator watches CRDs in all namespaces and requires cluster-wide RBAC permissions to operate. This is the default deployment mode, enabled through the default configuration values:</p>
+<pre><code class="language-bash">helm repo add mariadb-operator https://helm.mariadb.com/mariadb-operator
+helm install mariadb-operator mariadb-operator/mariadb-operator
+</code></pre>
+<h4 id="single-namespace">Single namespace</h4>
+<p>By setting <code>currentNamespaceOnly=true</code>, the operator will only watch CRDs within the namespace it is deployed in, and the RBAC permissions will be restricted to that namespace as well:</p>
+<pre><code class="language-bash">helm repo add mariadb-operator https://helm.mariadb.com/mariadb-operator
+helm install mariadb-operator \
+  -n databases --create-namespace \
+  --set currentNamespaceOnly=true \
+  mariadb-operator/mariadb-operator
+</code></pre>
+<h2 id="updates">Updates</h2>
+<blockquote>
+<p>[!IMPORTANT]<br />
+Make sure you read and understand the <a href="../UPDATES/">updates documentation</a> before proceeding to update the operator.</p>
+</blockquote>
+<p>The first step to perform an operator update is upgrading the CRDs:</p>
+<pre><code class="language-bash">helm repo update mariadb-operator
+helm upgrade --install mariadb-operator-crds \
+  --version &lt;new-version&gt; \
+  mariadb-operator/mariadb-operator-crds
+</code></pre>
+<p>Once updated, you may proceed to upgrade the operator:</p>
+<pre><code class="language-bash">helm repo update mariadb-operator
+helm upgrade --install mariadb-operator \
+  --version &lt;new-version&gt; \
+  mariadb-operator/mariadb-operator 
+</code></pre>
+<p>Whenever a new version of the <code>mariadb-operator</code> is released, an upgrade guide is linked in the release notes if additional upgrade steps are required. Be sure to review the <a href="https://github.com/mariadb-operator/mariadb-operator/releases">release notes</a> and follow the version-specific upgrade guides accordingly.</p>
+<h2 id="high-availability">High availability</h2>
+<p>The operator can run in high availability mode to ensure that your CRs get reconciled even if the node where the operator runs goes down. For achieving this you need:
+- Multiple replicas
+- Configure <code>Pod</code> anti-affinity
+- Configure <code>PodDisruptionBudgets</code> </p>
+<p>You can achieve this by providing the following values to the helm chart:</p>
+<pre><code class="language-yaml">ha:
+  enabled: true
+  replicas: 3
+
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: app.kubernetes.io/name
+          operator: In
+          values:
+          - mariadb-operator
+        - key: app.kubernetes.io/instance
+          operator: In
+          values:
+          - mariadb-operator
+      topologyKey: kubernetes.io/hostname
+
+pdb:
+  enabled: true
+  maxUnavailable: 1
+</code></pre>
+<h2 id="uninstalling">Uninstalling</h2>
+<blockquote>
+<p>[!CAUTION]
+Uninstalling the <code>mariadb-operator-crds</code> Helm chart will remove the CRDs and their associated resources, resulting in downtime.</p>
+</blockquote>
+<p>First, uninstall the <code>mariadb-operator</code> Helm chart. This action will not delete your CRDs, so your operands (i.e. <code>MariaDB</code> and <code>MaxScale</code>) will continue to run without the operator's reconciliation.</p>
 <pre><code class="language-bash">helm uninstall mariadb-operator
 </code></pre>
-<p>Alternatively, you may only downscale and delete the webhook configurations:</p>
-<pre><code class="language-bash">kubectl scale deployment mariadb-operator -n default --replicas=0
-kubectl scale deployment mariadb-operator-webhook -n default --replicas=0
-kubectl delete validatingwebhookconfiguration mariadb-operator-webhook
-kubectl delete mutatingwebhookconfiguration mariadb-operator-webhook
-</code></pre>
-<ul>
-<li>In case you are manually applying manifests, get a copy of your <code>MariaDB</code> resources, as the CRD upgrade will wipe out fields that are no longer supported:</li>
-</ul>
-<pre><code class="language-bash">kubectl get mariadb mariadb-repl -n default -o yaml &gt; mariadb-repl.yaml
-</code></pre>
-<ul>
-<li>Upgrade CRDs to <code>v0.0.20</code>:<blockquote>
-<p>[!IMPORTANT]<br />
-Helm does not handle CRD upgrades. See <a href="https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations">helm docs</a>.</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>[!WARNING]<br />
-This step will delete fields that are no longer supported in your resources.</p>
-</blockquote>
-<pre><code class="language-bash">kubectl replace -f https://github.com/mariadb-operator/mariadb-operator/releases/download/helm-chart-0.20.0/crds.yaml
-</code></pre>
-<ul>
-<li>Perform migrations in your <code>MariaDB</code> resouces:</li>
-<li>Set <code>spec.replication.enabled = true</code>.</li>
-<li>If you had previously set <code>spec.replication.primary.service</code>, move it to <code>spec.primaryService</code>.</li>
-<li>Rename your resources to point to the new <code>&lt;mariadb-name&gt;-primary</code> <code>Service</code> instead of  <code>primary-&lt;mariadb-name&gt;</code>.</li>
-<li>If you had previously set  <code>spec.replication.primary.connection</code>, move it to <code>spec.primaryConnection</code>.</li>
-<li>
-<p>Rename your resources to point to the new <code>&lt;mariadb-name&gt;-primary</code> <code>Connection</code> instead of  <code>primary-&lt;mariadb-name&gt;</code>.</p>
-</li>
-<li>
-<p>Upgrade <code>mariadb-operator</code> to <code>v0.0.20</code>:</p>
-</li>
-</ul>
-<pre><code class="language-bash">helm repo update mariadb-operator
-helm upgrade --install mariadb-operator mariadb-operator/mariadb-operator --version 0.20.0 
-</code></pre>
-<ul>
-<li>If you previously decided to downscale the operator, make sure you upscale it back:</li>
-</ul>
-<pre><code class="language-bash">kubectl scale deployment mariadb-operator -n default --replicas=1
-kubectl scale deployment mariadb-operator-webhook -n default --replicas=1
+<p>At this point, if you also want to delete CRDs and the operands running in your cluster, you may proceed to uninstall the <code>mariadb-operator-crds</code> Helm chart:</p>
+<pre><code class="language-bash">helm uninstall mariadb-operator-crds
 </code></pre>
 
 

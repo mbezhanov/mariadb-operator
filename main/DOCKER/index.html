@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../METRICS/">
+        <link rel="prev" href="../DEVELOPMENT/">
       
       
-        <link rel="next" href="../SQL_RESOURCES/">
+        <link rel="next" href="../GALERA/">
       
       
       <link rel="icon" href="../assets/mariadb_favicon.svg">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Registry - MariaDB Operator</title>
+        <title>Docker Images for MariaDB Operator - MariaDB Operator</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#registry" class="md-skip">
+        <a href="#docker-images-for-mariadb-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Registry
+              Docker Images for MariaDB Operator
             
           </span>
         </div>
@@ -366,10 +366,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../DOCKER/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -378,6 +387,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -506,30 +516,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Registry
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../REGISTRY/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,71 +528,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentials
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mariadb" class="md-nav__link">
-    <span class="md-ellipsis">
-      MariaDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maxscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      MaxScale
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-restore-and-sqljob" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup, Restore and SqlJob
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -959,59 +884,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credentials" class="md-nav__link">
-    <span class="md-ellipsis">
-      Credentials
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mariadb" class="md-nav__link">
-    <span class="md-ellipsis">
-      MariaDB
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maxscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      MaxScale
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-restore-and-sqljob" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup, Restore and SqlJob
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1028,96 +900,81 @@
   
 
 
-<h1 id="registry">Registry</h1>
+<h1 id="docker-images-for-mariadb-operator">Docker Images for MariaDB Operator</h1>
+<p>The mariadb-operator uses a variety of docker images depending on how it’s configured and what mix of open source or commercial software you’d like to use. As only the latest version of MariaDB Community Server is supported, the community server version will increment frequently with only a best effort made to keep current with the latest release(s). Only MariaDB Enterprise Server offers support for older versions.</p>
 <blockquote>
 <p>[!NOTE]<br />
-This documentation applies to <code>mariadb-operator</code> version &gt;= v0.0.27</p>
+Using Docker images other than the supported ones in this document is not recommended at this time.</p>
 </blockquote>
-<p>This documentation aims to provide guidance on how to configure private registries in the <code>mariadb-operator</code> CRs.</p>
-<h2 id="table-of-contents">Table of contents</h2>
-<!-- toc -->
-<ul>
-<li><a href="#credentials">Credentials</a></li>
-<li><a href="#mariadb"><code>MariaDB</code></a></li>
-<li><a href="#maxscale"><code>MaxScale</code></a></li>
-<li><a href="#backup-restore-and-sqljob"><code>Backup</code>, <code>Restore</code> and <code>SqlJob</code></a></li>
-</ul>
-<!-- /toc -->
-
-<h2 id="credentials">Credentials</h2>
-<p>The first requirement to access a private registry is having credentials in the cluster that will be pulling the images. Kubernetes has a specific type of <code>Secret</code> <code>kubernetes.io/dockerconfigjson</code> designed specifically for this purpose. Please, refer to the <a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">Kubernetes documentation</a> to see how it can be configured.</p>
-<p>For convenience, this repo provides a make target that can be used to configure your existing credentials available in <code>~/.docker/config</code> as a <code>kubernetes.io/dockerconfigjson</code> <code>Secret</code>:</p>
-<pre><code class="language-bash">REGISTRY_PULL_SECRET=registry DOCKER_CONFIG=~/.docker/config.json make registry-secret
-</code></pre>
-<h2 id="mariadb"><code>MariaDB</code></h2>
-<p>In order to configure a private registry in your <code>MariaDB</code> resource, you can specify multiple <code>imagePullSecrets</code>:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-  ...
-  image: docker.mariadb.com/enterprise-server:10.6
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-    - name: another-registry
-</code></pre>
-<p>As a result, the <code>Pods</code> created as part of the reconciliation process will have the <code>imagePullSecrets</code>.</p>
-<p>You can also configure credentials for the metrics exporter:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-  ...
-  metrics:
-    enabled: true
-    exporter:
-      image: prom/mysqld-exporter:v0.15.1
-      imagePullPolicy: IfNotPresent
-      imagePullSecrets:
-        - name: registry
-</code></pre>
-<p>By default, the metrics exporter <code>Pod</code> will inherit the credentials specified in the <code>imagePullSecrets</code> root field, but you can also specify dedicated credentials via <code>metrics.exporter.imagePullSecrets</code>.</p>
-<h2 id="maxscale"><code>MaxScale</code></h2>
-<p>Similarly to <code>MariaDB</code>, you are able to configure private registries in your <code>MaxScale</code> resource:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MaxScale
-metadata:
-  name: maxscale
-spec:
-  ...
-  image: mariadb/maxscale:23.08
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-</code></pre>
-<h2 id="backup-restore-and-sqljob"><code>Backup</code>, <code>Restore</code> and <code>SqlJob</code></h2>
-<p>The batch <code>Job</code> resources will inherit the <code>imagePullSecrets</code> from the referred <code>MariaDB</code>, as they also make use of its <code>image</code>. However, you are also able to provide dedicated <code>imagePullSecrets</code> for these resources:</p>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: MariaDB
-metadata:
-  name: mariadb
-spec:
-  ...
-  image: docker.mariadb.com/enterprise-server:10.6
-  imagePullPolicy: IfNotPresent
-  imagePullSecrets:
-    - name: registry
-</code></pre>
-<pre><code class="language-yaml">apiVersion: k8s.mariadb.com/v1alpha1
-kind: Backup
-metadata:
-  name: backup
-spec:
-  ...
-  mariaDbRef:
-    name: mariadb
-  imagePullSecrets:
-    - name: backup-registry
-</code></pre>
-<p>When the resources from the above examples are created, a <code>Job</code> with both <code>registry</code> and <code>backup-registry</code> <code>imagePullSecrets</code> will be reconciled.</p>
+<table width="100%">
+  <thead>
+    <tr>
+      <th width="15%">Component</th>
+      <th width="20%">Docker Registry</th>
+      <th width="20%">Supported Tags</th>
+      <th width="5%">CPU</th>
+      <th width="40%">Pull Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MariaDB Community Server</td>
+      <td>Public</td>
+      <td><code>11.4.3</code> (Used with Community Operator)<br/><code>11.4.3-ubi9</code> (Used with Enterprise Operator)</td>
+      <td><code>amd64</code> <code>arm64</code> <code>ppc64le</code> <code>s390x</code></td>
+      <td><code>docker pull docker-registry1.mariadb.com/library/mariadb:11.4.3</code><br/><code>docker pull docker-registry1.mariadb.com/library/mariadb:11.4.3-ubi9</code></td>
+    </tr>
+    <tr>
+      <td>MariaDB Enterprise Server</td>
+      <td>Private<br><a href=https://docker.mariadb.com>docker.mariadb.com</a><br>Login required, click link for instructions</td>
+      <td><code>10.6.18-14.1</code> <code>10.6.17-13.1</code> <code>10.5.25-19.1</code> <code>10.5.24-18.1</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry.mariadb.com/enterprise-server:10.6.18-14</code></td>
+    </tr>
+    <tr>
+      <td>MariaDB MaxScale UBI</td>
+      <td>Public</td>
+      <td><code>23.08.6-ubi-1</code> <code>24.02.2-ubi-1</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry2.mariadb.com/mariadb/maxscale:23.08.6-ubi-1</code></td>
+    </tr> 
+      <tr>
+      <td>MariaDB MaxScale Rocky Linux</td>
+      <td>Public</td>
+      <td><code>mariadb/maxscale:23.08.5</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry2.mariadb.com/mariadb/maxscale:23.08.5</code></td>
+    </tr>
+    <tr>
+      <td>MariaDB Prometheus Exporter</td>
+      <td>Public</td>
+      <td><code>v0.0.1</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry2.mariadb.com/mariadb/mariadb-prometheus-exporter-ubi:v0.0.1</code></td>
+    </tr>
+    <tr>
+      <td>MariaDB MaxScale prometheus exporter</td>
+      <td>Public</td>
+      <td><code>v0.0.1</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry2.mariadb.com/mariadb/maxscale-prometheus-exporter-ubi:v0.0.1</code></td>
+    </tr>
+    <tr>
+      <td>Community Operator</td>
+      <td>Public</td>
+      <td><code>0.34.0</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry3.mariadb.com/mariadb-operator/mariadb-operator:0.34.0</code></td>
+    </tr>
+    <tr>
+      <td>Enterprise Operator</td>
+      <td>Public</td>
+      <td><code>0.34.0</code></td>
+      <td><code>amd64</code> <code>arm64</code></td>
+      <td><code>docker pull docker-registry2.mariadb.com/mariadb/mariadb-operator-enterprise:0.34.0</code></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
